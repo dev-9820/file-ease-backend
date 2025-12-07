@@ -12,10 +12,8 @@ Backend for a secure file-sharing app using Node/Express and MongoDB (GridFS). F
 ## Setup
 1. Install dependencies:
    npm install
-2. Start MongoDB.
-3. Copy `.env` with variables:
-   MONGO_URI, JWT_SECRET, PORT, MAX_UPLOAD_SIZE_MB
-4. Start server:
+2. Paste the Respective `.env` files in the folders.
+3. Start server:
    npm run dev
 
 ## How expiry is defined
@@ -26,6 +24,3 @@ Backend for a secure file-sharing app using Node/Express and MongoDB (GridFS). F
 ## Handling unordered events & malformed events
 - This backend is synchronous for file operations. For events (if using notifications), store event timestamps and deduplicate by unique event id to handle unordered delivery.
 - Malformed requests are validated by schema checks and multer fileFilter; endpoints return 4xx for input validation failures.
-
-## Run & test
-Use Postman or curl (examples in repo).
